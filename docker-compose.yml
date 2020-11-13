@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  mongo-db:
+    image: mongo
+    container_name: isi-mongo
+    environment:
+        MONGO_INITDB_DATABASE: isi
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: Cpp7j,>Z%
+    restart: always
+    volumes:
+        - ./docker/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+        - mongo:/data/db
+    ports:
+        - "27027:27017"
+
+volumes:
+    mongo:
