@@ -1,10 +1,14 @@
 {
+  "name": "isi-api",
+  "version": "1.0.0",
+  "description": "API for Isi web app",
   "scripts": {
     "devStart": "nodemon ./src/server.js",
     "lint": "eslint --ext .js .",
     "lint-fix": "eslint --fix --ext .js ."
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.10.14",

@@ -39,13 +39,32 @@ router.post('/', async (req, res) => {
 })
 
 // Edit One Route PUT
-router.put('/:id', async (req, res) => {
-
+router.put('/:id', findIsi, async (req, res) => {
+  try {
+    const updatedIsi = await Isi.updateOne({}, {
+      q1: req.body.q1,
+      q2: req.body.q2,
+      q3: req.body.q3,
+      q4: req.body.q4,
+      q5: req.body.q5,
+      q6: req.body.q6,
+      q7: req.body.q7,
+      total: req.body.total
+    })
+    res.json(updatedIsi)
+  } catch (err) {
+    res.status(400).json({ message: err.message })
+  }
 })
 
 // Delete One Route
-router.delete('/:id', async (req, res) => {
-
+router.delete('/:id', findIsi, async (req, res) => {
+  try {
+    await res.isi.deleteOne()
+    res.json({ message: 'Index deleted' })
+  } catch (err) {
+    res.status(500).json({ message: err.message })
+  }
 })
 
 module.exports = router
