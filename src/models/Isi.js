@@ -1,31 +1,31 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const isiSchema = new Schema({
-  question1: {
+  q1: {
     type: Number,
     required: true
   },
-  question2: {
+  q2: {
     type: Number,
     required: true
   },
-  question3: {
+  q3: {
     type: Number,
     required: true
   },
-  question4: {
+  q4: {
     type: Number,
     required: true
   },
-  question5: {
+  q5: {
     type: Number,
     required: true
   },
-  question6: {
+  q6: {
     type: Number,
     required: true
   },
-  question7: {
+  q7: {
     type: Number,
     required: true
   }

@@ -10,6 +10,6 @@ db.on('error', error => console.log(error))
 db.once('open', () => console.log('connection to db established'))
 app.use(express.json())
 
-// const usersRouter = require('./routes/users')
-// app.use('/users', usersRouter)
+const isiRouter = require('./endpoints/isis')
+app.use('/indexes', isiRouter)
 app.listen(process.env.PORT, () => console.log(`server has started at port ${process.env.PORT}`))
