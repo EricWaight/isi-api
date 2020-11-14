@@ -28,6 +28,10 @@ const isiSchema = new Schema({
   q7: {
     type: Number,
     required: true
+  },
+  total: {
+    type: Number,
+    required: true
   }
 })
 const Isi = mongoose.model('Isi', isiSchema)
