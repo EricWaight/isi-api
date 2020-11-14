@@ -1,19 +1,17 @@
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
+const { connectMongo } = require('./config/mongo.config')
 
 const app = express()
-const mongoose = require('mongoose')
-mongoose.connect(process.env.DATABASE_URI, { useNewUrlParser: true })
-const db = mongoose.connection
 
 const corsOptions = {
   origin: process.env.ENV_URI
 }
 app.use(cors(corsOptions))
 
-db.on('error', error => console.log(error))
-db.once('open', () => console.log('connection to db established'))
+connectMongo().on('error', error => console.log(error))
+connectMongo().once('open', () => console.log('connection to db established'))
 app.use(express.json())
 
 const isiRouter = require('./endpoints/isis')
