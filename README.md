@@ -8,6 +8,7 @@
 ### From the terminal:
 ### -Run docker-compose up -d in the main folder
 ### -Run 'npm install'
+### -Run 'npm run seed'
 ### -Run 'npm run devStart'
 
 ## To test routes, use this postman collection:
