@@ -1,20 +1,32 @@
 version: '3'
 
 services:
+    # isi-api:
+    #     image: ewaight/isi-api
+    #     container_name: isi-api
+    #     environment: 
+    #         DATABASE_URI: mongodb://root:password123@localhost:27027/isi
+    #         PORT: 5000
+    #         ENV_URI : '*'
+    #     ports:
+    #         - "3030:5000"
+    #     restart: always
+    #     depends_on:
+    #         - mongo-db
 
-  mongo-db:
-    image: mongo
-    container_name: isi-mongo
-    environment:
-        MONGO_INITDB_DATABASE: isi
-        MONGO_INITDB_ROOT_USERNAME: root
-        MONGO_INITDB_ROOT_PASSWORD: Cpp7j,>Z%
-    restart: always
-    volumes:
-        - ./docker/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-        - mongo:/data/db
-    ports:
-        - "27027:27017"
+    mongo-db:
+        image: mongo
+        container_name: isi-mongo
+        environment:
+            MONGO_INITDB_DATABASE: isi
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: password123
+        restart: always
+        volumes:
+            - ./docker/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+            - mongo:/data/db
+        ports:
+            - "27027:27017"
 
 volumes:
     mongo:

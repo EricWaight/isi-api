@@ -2,7 +2,7 @@
 db.createUser(
   {
     user: 'admin',
-    pwd: 'Cpp7j483012',
+    pwd: 'password123',
     roles: [
       {
         role: 'readWrite',
