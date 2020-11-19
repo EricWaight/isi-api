@@ -1,14 +1,8 @@
 require('dotenv').config()
 const express = require('express')
-const cors = require('cors')
 const { connectMongo } = require('./config/mongo.config')
 
 const app = express()
-
-const corsOptions = {
-  origin: '*'
-}
-app.use(cors(corsOptions))
 
 connectMongo().on('error', error => console.log(error))
 connectMongo().once('open', () => console.log('connection to db established'))
