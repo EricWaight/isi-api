@@ -6,7 +6,7 @@ const { connectMongo } = require('./config/mongo.config')
 const app = express()
 
 const corsOptions = {
-  origin: process.env.ENV_URI
+  origin: '*'
 }
 app.use(cors(corsOptions))
 
