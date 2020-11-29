@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    isi-mongo:
+        image: mongo
+        container_name: isi-mongo
+        restart: always
+        volumes:
+            - mongo:/data/db
+        ports:
+            - '27027:27017'
+
+volumes:
+    mongo:
